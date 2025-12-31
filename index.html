@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aprende Inteligencia Artificial — Donato Conturla</title>
+
+  <!-- CSS integrado en el mismo archivo (requisito) -->
+  <style>
+    /* --- CSS solicitado (tal cual) --- */
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #0a0f1f;
+        color: #ffffff;
+    }
+
+    .hero {
+        text-align: center;
+        padding: 80px 20px;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background: #00e5ff;
+        color: #000;
+        text-decoration: none;
+        border-radius: 30px;
+        margin-top: 20px;
+    }
+
+    section {
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+
+    .grid div {
+        background: #121c3d;
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .contact input, .contact textarea {
+        width: 90%;
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    footer {
+        background: #000;
+        padding: 20px;
+        text-align: center;
+    }
+
+    /* --- Reglas adicionales para mejorar diseño, accesibilidad y responsividad --- */
+
+    /* Contenedor central para limitar ancho y centrar contenido */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Tipografía y espaciado dentro de hero */
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: 2rem;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+    }
+
+    .hero p {
+      margin: 0;
+      opacity: 0.95;
+      font-size: 1.05rem;
+    }
+
+    /* Navegación simple (opcional pero útil en GH Pages) */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 20px;
+      background: rgba(0,0,0,0.12);
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(6px);
+    }
+
+    .nav .brand {
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .nav .links a {
+      color: #cfeefe;
+      text-decoration: none;
+      margin-left: 12px;
+      font-size: 0.95rem;
+    }
+
+    /* Tarjetas de servicios: título y descripción */
+    .card-title {
+      font-weight: 700;
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }
+
+    .card-desc {
+      color: #bcd3e1;
+      font-size: 0.95rem;
+    }
+
+    /* Sección 'why' */
+    .why ul {
+      list-style: none;
+      padding: 0;
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .why li {
+      background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding: 12px 16px;
+      margin: 10px 0;
+      border-radius: 10px;
+      color: #dfeff6;
+    }
+
+    /* Formulario */
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .contact input[type="text"],
+    .contact input[type="email"],
+    .contact textarea {
+      border: 1px solid rgba(255,255,255,0.07);
+      background: rgba(255,255,255,0.02);
+      color: #fff;
+      border-radius: 8px;
+      max-width: 700px;
+    }
+
+    .contact textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .btn.whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #25D366;
+      color: #fff;
+      border-radius: 8px;
+      padding: 10px 16px;
+      text-decoration: none;
+      margin-top: 12px;
+    }
+
+    .btn:hover, .btn.whatsapp:hover {
+      opacity: 0.95;
+      transform: translateY(-2px);
+      transition: all 180ms ease;
+    }
+
+    /* Footer texto pequeño */
+    footer p {
+      margin: 6px 0 0;
+      color: #9aaec2;
+      font-size: 0.95rem;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 640px) {
+      .hero {
+        padding: 56px 18px;
+      }
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+      section {
+        padding: 40px 16px;
+      }
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navegación (se añadió para estructura y usabilidad en pantalla) -->
+  <header class="nav">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
+      <div class="brand">Donato Conturla</div>
+      <nav class="links" aria-label="Enlaces principales">
+        <a href="#about">Sobre mí</a>
+        <a href="#services">Servicios</a>
+        <a href="#why">Por qué</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="container">
+      <h1 id="hero-heading">Aprende Inteligencia Artificial y llevá tu negocio al futuro</h1>
+      <p>Asesoramiento profesional en IA aplicado a empresas y personas</p>
+      <a href="#contacto" class="btn" role="button">Contactar ahora</a>
+    </div>
+  </section>
+
+  <!-- Sobre mí -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2>Sobre mí</h2>
+      <p><strong>Donato Conturla</strong><br>
+        Soy asesor en Inteligencia Artificial. Ayudo a personas y empresas a entender,
+        aplicar y aprovechar la IA para mejorar procesos y crecer.</p>
+    </div>
+  </section>
+
+  <!-- Servicios (usa .grid tal como se pidió) -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2>Servicios</h2>
+      <div class="grid" role="list">
+        <div role="listitem">
+          <div class="card-title">Asesoramiento en IA</div>
+          <div class="card-desc">Estrategia y diagnóstico para incorporar IA.</div>
+        </div>
+        <div role="listitem">
+          <div class="card-title">Aprendizaje práctico</div>
+          <div class="card-desc">Capacitaciones hands-on para equipos.</div>
+        </div>
+        <div role="listitem">
+          <div class="card-title">Automatización con IA</div>
+          <div class="card-desc">Reducí tareas repetitivas con modelos prácticos.</div>
+        </div>
+        <div role="listitem">
+          <div class="card-title">IA para negocios</div>
+          <div class="card-desc">Implementaciones que generan ROI real.</div>
+        </div>
+        <div role="listitem">
+          <div class="card-title">Consultoría personalizada</div>
+          <div class="card-desc">Soluciones diseñadas para tu contexto.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Por qué elegirnos -->
+  <section id="why" class="why">
+    <div class="container">
+      <h2>¿Por qué elegirnos?</h2>
+      <ul>
+        <li>Enfoque claro y simple</li>
+        <li>Lenguaje accesible</li>
+        <li>Soluciones reales</li>
+        <li>Tecnología de vanguardia</li>
+        <li>Atención personalizada</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="contact">
+    <div class="container">
+      <h2>Contacto</h2>
+      <p>📞 2235319300</p>
+      <p>📧 Donatoconturla190@gmail.com</p>
+      <a class="btn whatsapp" href="https://wa.me/5492235319300" target="_blank" rel="noopener">WhatsApp</a>
+
+      <form method="post" action="/contact" aria-label="Formulario de contacto">
+        <input type="text" name="name" placeholder="Nombre" required aria-label="Nombre" />
+        <input type="email" name="email" placeholder="Email" required aria-label="Email" />
+        <textarea name="message" placeholder="Mensaje" aria-label="Mensaje"></textarea>
+        <button type="submit" class="btn" style="border-radius:12px;">Enviar</button>
+      </form>
+
+      <p class="cta">Contactame hoy y empezá a usar la IA a tu favor</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <small>© 2025 Donato Conturla – Aprende sobre IA</small>
+      <p>Hecho con ❤️ — Asesoría y formación en IA</p>
+    </div>
+  </footer>
+</body>
+</html>
