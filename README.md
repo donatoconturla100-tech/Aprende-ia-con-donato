@@ -1,276 +1,267 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Ejemplo</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 2rem; }
-    header { border-bottom: 1px solid #ddd; padding-bottom: 0.5rem; margin-bottom: 1rem; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendizaje con Inteligencia Artificial</title>
+
+    <!-- Enlace al archivo de estilos -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Mi página de ejemplo</h1>
-  </header>
 
-  <p>¡Hola! Este es un archivo de prueba agregado al repositorio.</p>
+    <!-- ================= HEADER FUTURISTA ================= -->
+    <header class="header">
+        <div class="overlay"></div>
+        <div class="header-content">
+            <h1>Aprendizaje Profesional con Inteligencia Artificial</h1>
+            <p>La educación del futuro impulsada por tecnología avanzada y sistemas inteligentes</p>
+            <a href="#contacto" class="btn-neon">Contactar</a>
+        </div>
+    </header>
 
-  <script>
-    console.log('Página cargada: ejemplo simple');
-  </script>
+    <!-- ================= SECCIÓN DE QUÉ TRATA ================= -->
+    <section class="about">
+        <h2>¿De qué trata?</h2>
+        <p>
+            Esta plataforma está diseñada para formar profesionales en Inteligencia Artificial,
+            automatización y tecnologías del futuro. Aprendé a dominar sistemas inteligentes,
+            innovación tecnológica y soluciones avanzadas que están transformando el mundo.
+        </p>
+    </section>
+
+    <!-- ================= SECCIÓN CARACTERÍSTICAS ================= -->
+    <section class="features">
+        <h2>Tecnología del Futuro</h2>
+
+        <div class="cards">
+            <div class="card">
+                <span>🤖</span>
+                <h3>IA Avanzada</h3>
+                <p>Sistemas inteligentes capaces de aprender y evolucionar.</p>
+            </div>
+
+            <div class="card">
+                <span>🧠</span>
+                <h3>Aprendizaje Automático</h3>
+                <p>Modelos que mejoran su rendimiento con datos.</p>
+            </div>
+
+            <div class="card">
+                <span>🚀</span>
+                <h3>Naves Espaciales</h3>
+                <p>Inspiración en tecnología aeroespacial del futuro.</p>
+            </div>
+
+            <div class="card">
+                <span>🦾</span>
+                <h3>Robots</h3>
+                <p>Automatización avanzada y robótica inteligente.</p>
+            </div>
+
+            <div class="card">
+                <span>⚙️</span>
+                <h3>Sistemas Inteligentes</h3>
+                <p>Infraestructuras tecnológicas autónomas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SECCIÓN VISUAL FUTURISTA ================= -->
+    <section class="visual">
+        <h2>Explorando el Espacio Tecnológico</h2>
+        <p>
+            Un entorno visual inspirado en el espacio, máquinas futuristas
+            y la evolución de la inteligencia artificial.
+        </p>
+        <div class="space-animation"></div>
+    </section>
+
+    <!-- ================= SECCIÓN CONTACTO ================= -->
+    <section class="contact" id="contacto">
+        <h2>Contacto</h2>
+        <p>📧 Email: <strong>Donatoconturla100@gmail.com</strong></p>
+        <p>📞 Teléfono: <strong>2235319300</strong></p>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <p>© 2025 • Tecnología del Futuro • Todos los derechos reservados</p>
+    </footer>
+
 </body>
 </html>
-
-/* Estilo actualizado: Futurista, profesional, con estrellas y "AI vibes" */
-/* Variables y tipografía */
-:root{
-  --bg-0: #040617;
-  --bg-1: #071028;
-  --glass: rgba(255,255,255,0.06);
-  --glass-2: rgba(255,255,255,0.04);
-  --accent: #00e5ff;
-  --accent-2: #7c3cff;
-  --neon: 0, 229, 255; /* RGB para glow */
-  --card-radius: 14px;
-  --glass-border: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+/* ================= CONFIGURACIÓN GENERAL ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
-
-*{box-sizing:border-box}
-html,body{height:100%}
 
 body {
-  margin: 0;
-  font-family: "Inter", Arial, sans-serif;
-  background: radial-gradient(1200px 600px at 10% 10%, rgba(124,60,255,0.09), transparent),
-              radial-gradient(900px 500px at 90% 90%, rgba(0,229,255,0.05), transparent),
-              linear-gradient(180deg, var(--bg-0), var(--bg-1) 60%);
-  color: #eaf6ff;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  position:relative;
-  overflow-x:hidden;
-  min-height:100vh;
+    background-color: #05010d;
+    color: #ffffff;
+    line-height: 1.6;
 }
 
-/* Estrella / campo estelar animado (pseudo-elemento) */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  z-index:0;
-  background-image:
-    radial-gradient(1px 1px at 5% 10%, rgba(255,255,255,0.9), transparent 40%),
-    radial-gradient(1px 1px at 15% 50%, rgba(255,255,255,0.85), transparent 40%),
-    radial-gradient(1px 1px at 30% 20%, rgba(255,255,255,0.75), transparent 40%),
-    radial-gradient(1px 1px at 60% 80%, rgba(255,255,255,0.65), transparent 40%),
-    radial-gradient(1px 1px at 85% 25%, rgba(255,255,255,0.6), transparent 40%),
-    radial-gradient(2px 2px at 45% 40%, rgba(255,255,255,0.35), transparent 40%),
-    radial-gradient(0.8px 0.8px at 75% 70%, rgba(255,255,255,0.45), transparent 40%);
-  background-size: 1200px 800px, 1000px 700px, 800px 600px, 700px 500px, 600px 400px, 1400px 1000px, 900px 600px;
-  opacity:0.45;
-  animation: starfield 60s linear infinite;
-  pointer-events:none;
-  filter: blur(0.6px);
+/* ================= HEADER FUTURISTA ================= */
+.header {
+    position: relative;
+    height: 100vh;
+    background: radial-gradient(circle at top, #1a0033, #000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
-@keyframes starfield{
-  from{transform:translate3d(0,0,0)}
-  to{transform:translate3d(-1200px,-800px,0)}
+.header::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png');
+    animation: moveStars 60s linear infinite;
 }
 
-/* Contenedor principal para situar encima del fondo */
-.container{
-  position:relative;
-  z-index:1;
-  max-width:1100px;
-  margin:0 auto;
-  padding:40px 20px 120px;
+@keyframes moveStars {
+    from { transform: translateY(0); }
+    to { transform: translateY(-1000px); }
 }
 
-/* Hero mejorado */
-.hero {
-  text-align: left;
-  padding: clamp(36px, 6vw, 88px);
-  border-radius: 18px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  box-shadow: 0 10px 40px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
-  display:flex;
-  gap:28px;
-  align-items:center;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.03);
-  position:relative;
-  overflow:visible;
+.header-content {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    padding: 20px;
 }
 
-.hero .content{
-  flex:1;
-  padding-right:20px;
+.header h1 {
+    font-size: 3rem;
+    color: #00ffff;
+    text-shadow: 0 0 20px #00ffff;
 }
 
-.hero h1{
-  font-size:clamp(1.8rem, 4vw, 3.6rem);
-  margin:0 0 8px 0;
-  line-height:1.02;
-  letter-spacing:-0.02em;
-  color: linear-gradient(90deg, #fff, #e6f9ff);
-  text-shadow: 0 6px 28px rgba(var(--neon),0.06), 0 2px 4px rgba(0,0,0,0.6);
-  font-weight:800;
+.header p {
+    margin: 20px 0;
+    color: #bdbdff;
 }
 
-.hero p{
-  margin:0 0 18px;
-  color:rgba(234,246,255,0.9);
-  font-size:1.05rem;
+/* ================= BOTÓN NEÓN ================= */
+.btn-neon {
+    display: inline-block;
+    padding: 12px 30px;
+    color: #00ffff;
+    border: 2px solid #00ffff;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.3s;
+    box-shadow: 0 0 15px #00ffff;
 }
 
-/* Botones neon */
-.btn {
-  display: inline-flex;
-  align-items:center;
-  gap:10px;
-  padding: 12px 26px;
-  background: linear-gradient(90deg, rgba(0,229,255,0.12), rgba(124,60,255,0.12));
-  color: var(--accent);
-  text-decoration: none;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.06);
-  box-shadow: 0 6px 30px rgba(0,0,0,0.6), 0 0 18px rgba(var(--neon),0.06);
-  transition: transform .18s ease, box-shadow .18s ease;
-  font-weight:600;
-}
-.btn .dot{
-  width:10px; height:10px; border-radius:50%;
-  background:linear-gradient(180deg,var(--accent),var(--accent-2));
-  box-shadow:0 0 12px rgba(var(--neon),0.8);
+.btn-neon:hover {
+    background: #00ffff;
+    color: #000;
+    box-shadow: 0 0 30px #00ffff;
 }
 
-/* Hover effect */
-.btn:hover, .btn:focus{
-  transform: translateY(-4px);
-  box-shadow: 0 18px 40px rgba(var(--neon),0.16), 0 0 36px rgba(var(--neon),0.12);
-  color: #001a1f;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+/* ================= SECCIÓN ABOUT ================= */
+.about {
+    padding: 60px 20px;
+    text-align: center;
+    background: linear-gradient(180deg, #000, #120022);
 }
 
-/* Visual AI area (SVG or canvas) */
-.ai-visual {
-  width:360px;
-  height:220px;
-  border-radius: 12px;
-  background: linear-gradient(180deg, rgba(0,0,0,0.18), rgba(255,255,255,0.02));
-  border: 1px solid rgba(255,255,255,0.04);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:relative;
-  overflow:hidden;
-  box-shadow: 0 10px 36px rgba(12,22,40,0.6), 0 0 40px rgba(var(--neon),0.06);
-  flex-shrink:0;
+.about h2 {
+    color: #7cff00;
+    text-shadow: 0 0 10px #7cff00;
+    margin-bottom: 20px;
 }
 
-/* Neon network (SVG will sit inside and animate via CSS) */
-.ai-visual svg{ width:100%; height:100%; display:block; }
-
-/* Section generic */
-section {
-  padding: 60px 0;
-  text-align: center;
-  position:relative;
-  z-index:1;
+/* ================= FEATURES ================= */
+.features {
+    padding: 60px 20px;
+    background: #070014;
 }
 
-/* Grid modern */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-  margin-top:18px;
+.features h2 {
+    text-align: center;
+    color: #ff00ff;
+    margin-bottom: 40px;
+    text-shadow: 0 0 15px #ff00ff;
 }
 
-/* Card with glassmorphism + gradient border */
-.grid div {
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  padding: 22px;
-  border-radius: var(--card-radius);
-  border: 1px solid rgba(255,255,255,0.03);
-  box-shadow: 0 8px 28px rgba(2,8,28,0.6);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  transition: transform .22s ease, box-shadow .22s ease;
-  position:relative;
-  overflow:hidden;
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
 }
 
-/* Animated gradient accent stripe */
-.grid div::before{
-  content:"";
-  position:absolute;
-  inset:auto 0 0 0;
-  height:4px;
-  background: linear-gradient(90deg, transparent, rgba(124,60,255,0.9), rgba(0,229,255,0.9), transparent);
-  transform:translateY(100%);
-  transition:transform .28s cubic-bezier(.2,.9,.2,1);
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #2b0055;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    transition: 0.3s;
 }
 
-/* Hover lifts and reveals accent */
-.grid div:hover{
-  transform: translateY(-8px);
-  box-shadow: 0 18px 60px rgba(12,22,40,0.7);
+.card span {
+    font-size: 2.5rem;
 }
-.grid div:hover::before{ transform:translateY(0%) }
 
-/* Contact form */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px #00ffff;
+}
+
+/* ================= SECCIÓN VISUAL ================= */
+.visual {
+    padding: 80px 20px;
+    text-align: center;
+    background: radial-gradient(circle, #120022, #000);
+}
+
+.space-animation {
+    margin: 40px auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 40px #00ffff;
+    animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 20px #00ffff; }
+    50% { box-shadow: 0 0 60px #7cff00; }
+    100% { box-shadow: 0 0 20px #00ffff; }
+}
+
+/* ================= CONTACTO ================= */
 .contact {
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:8px;
-}
-.contact input, .contact textarea {
-  width: 95%;
-  max-width:720px;
-  padding: 12px 14px;
-  margin: 8px 0;
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.04);
-  background: rgba(255,255,255,0.02);
-  color: #eaf6ff;
-  outline:none;
-  resize:vertical;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
-}
-.contact input:focus, .contact textarea:focus{
-  border-color: rgba(var(--neon),0.9);
-  box-shadow: 0 6px 30px rgba(var(--neon),0.06);
+    padding: 60px 20px;
+    background: #05010d;
+    text-align: center;
 }
 
-/* Footer */
+.contact h2 {
+    color: #00ffff;
+    margin-bottom: 20px;
+}
+
+/* ================= FOOTER ================= */
 footer {
-  background: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(4,6,10,0.8));
-  padding: 28px 20px;
-  text-align: center;
-  color: rgba(234,246,255,0.7);
-  border-top: 1px solid rgba(255,255,255,0.02);
+    padding: 20px;
+    text-align: center;
+    background: #000;
+    color: #777;
 }
 
-/* Utility */
-.center { text-align:center }
-.kicker { color: rgba(234,246,255,0.65); font-weight:600; margin-bottom:10px; text-transform:uppercase; letter-spacing:0.14em; font-size:0.75rem }
-
-/* Small screens adjustments */
-@media (max-width:880px){
-  .hero{ flex-direction:column; padding:28px }
-  .ai-visual{ width:100%; height:200px; order:2 }
-  .hero .content{ order:1; padding-right:0 }
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
 }
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion:reduce){
-  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
-}
-
