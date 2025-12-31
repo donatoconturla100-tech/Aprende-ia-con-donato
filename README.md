@@ -133,3 +133,5 @@ footer {
     background: #000;
     padding: 20px;
     text-align: 
+
+    Aprende Inteligencia Artificial y llevá tu negocio al futuro
