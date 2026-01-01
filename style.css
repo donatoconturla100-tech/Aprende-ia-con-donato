@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aprendizaje con Inteligencia Artificial</title>
+<title>Futuro IA</title>
 
 <style>
 /* ================= CONFIGURACIÓN GENERAL ================= */
@@ -16,265 +16,248 @@
 }
 
 body {
-    background-color: #05010d;
+    background: radial-gradient(circle at top, #0a0020, #02010a 70%);
     color: #ffffff;
-    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* ================= HEADER FUTURISTA ================= */
-.header {
-    position: relative;
-    height: 100vh;
-    background: radial-gradient(circle at top, #1a0033, #000);
+/* ================= HEADER ================= */
+header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    overflow: hidden;
+    padding: 20px 60px;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,255,255,0.2);
 }
 
-.header::before {
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #00fff7;
+    text-shadow: 0 0 15px #00fff7;
+}
+
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #ffffff;
+    position: relative;
+    transition: 0.3s;
+}
+
+nav a::after {
     content: "";
     position: absolute;
-    width: 200%;
-    height: 200%;
-    background: url('https://www.transparenttextures.com/patterns/stardust.png');
-    animation: moveStars 60s linear infinite;
-}
-
-@keyframes moveStars {
-    from { transform: translateY(0); }
-    to { transform: translateY(-1000px); }
-}
-
-.header-content {
-    position: relative;
-    text-align: center;
-    z-index: 3;
-    padding: 20px;
-}
-
-.header h1 {
-    font-size: 3rem;
-    color: #00ffff;
-    text-shadow: 0 0 20px #00ffff;
-}
-
-.header p {
-    margin: 20px 0;
-    color: #bdbdff;
-}
-
-/* ================= BOTÓN NEÓN ================= */
-.btn-neon {
-    display: inline-block;
-    padding: 12px 30px;
-    color: #00ffff;
-    border: 2px solid #00ffff;
-    text-decoration: none;
-    border-radius: 30px;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, #00fff7, #a100ff);
     transition: 0.3s;
-    box-shadow: 0 0 15px #00ffff;
 }
 
-.btn-neon:hover {
-    background: #00ffff;
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ================= HERO ================= */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(180deg, rgba(0,255,255,0.05), transparent);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    background: linear-gradient(90deg, #00fff7, #b700ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 25px rgba(183,0,255,0.5);
+}
+
+.hero p {
+    margin: 20px 0 40px;
+    font-size: 1.2rem;
+    color: #cfcfcf;
+}
+
+.hero-buttons a {
+    margin: 10px;
+    padding: 15px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid #00fff7;
+    box-shadow: 0 0 15px #00fff7;
+    transition: 0.3s;
+}
+
+.hero-buttons a:hover {
+    background: #00fff7;
     color: #000;
-    box-shadow: 0 0 30px #00ffff;
+    box-shadow: 0 0 30px #00fff7;
 }
 
-/* ================= ABOUT ================= */
-.about {
-    padding: 60px 20px;
+/* ================= SECCIONES ================= */
+section {
+    padding: 80px 10%;
+}
+
+section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
     text-align: center;
-    background: linear-gradient(180deg, #000, #120022);
+    color: #a100ff;
+    text-shadow: 0 0 15px #a100ff;
 }
 
-.about h2 {
-    color: #7cff00;
-    text-shadow: 0 0 10px #7cff00;
-    margin-bottom: 20px;
-}
-
-/* ================= FEATURES ================= */
-.features {
-    padding: 60px 20px;
-    background: #070014;
-}
-
-.features h2 {
+section p {
+    max-width: 900px;
+    margin: auto;
     text-align: center;
-    color: #ff00ff;
-    margin-bottom: 40px;
-    text-shadow: 0 0 15px #ff00ff;
+    color: #d0d0d0;
+    line-height: 1.7;
 }
 
+/* ================= CARDS ================= */
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
+    gap: 30px;
+    margin-top: 50px;
 }
 
 .card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid #2b0055;
-    border-radius: 15px;
-    padding: 25px;
+    background: rgba(0,0,0,0.6);
+    border: 1px solid rgba(0,255,255,0.4);
+    border-radius: 20px;
+    padding: 30px;
     text-align: center;
-    transition: 0.3s;
+    box-shadow: 0 0 20px rgba(0,255,255,0.15);
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 0 40px rgba(161,0,255,0.6);
 }
 
 .card span {
     font-size: 2.5rem;
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 25px #00ffff;
-}
-
-/* ================= VISUAL ================= */
-.visual {
-    padding: 80px 20px;
-    text-align: center;
-    background: radial-gradient(circle, #120022, #000);
-}
-
-.space-animation {
-    margin: 40px auto;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    border: 2px solid #00ffff;
-    box-shadow: 0 0 40px #00ffff;
-    animation: pulse 3s infinite;
-}
-
-@keyframes pulse {
-    0% { box-shadow: 0 0 20px #00ffff; }
-    50% { box-shadow: 0 0 60px #7cff00; }
-    100% { box-shadow: 0 0 20px #00ffff; }
+.card h3 {
+    margin: 15px 0;
+    color: #00fff7;
 }
 
 /* ================= CONTACTO ================= */
 .contact {
-    padding: 60px 20px;
-    background: #05010d;
+    background: linear-gradient(180deg, transparent, rgba(161,0,255,0.15));
+    border-top: 1px solid rgba(161,0,255,0.4);
+}
+
+.contact-box {
+    max-width: 700px;
+    margin: auto;
+    background: rgba(0,0,0,0.7);
+    border-radius: 25px;
+    padding: 40px;
+    box-shadow: 0 0 40px rgba(0,255,255,0.3);
     text-align: center;
 }
 
-.contact h2 {
-    color: #00ffff;
-    margin-bottom: 20px;
+.contact-box p {
+    margin: 15px 0;
+    font-size: 1.1rem;
+}
+
+.contact-buttons a {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    border: 2px solid #a100ff;
+    color: #fff;
+    box-shadow: 0 0 15px #a100ff;
+    transition: 0.3s;
+}
+
+.contact-buttons a:hover {
+    background: #a100ff;
+    box-shadow: 0 0 35px #a100ff;
 }
 
 /* ================= FOOTER ================= */
 footer {
-    padding: 20px;
     text-align: center;
-    background: #000;
-    color: #777;
+    padding: 25px;
+    font-size: 0.9rem;
+    color: #888;
 }
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
-    .header h1 {
-        font-size: 2rem;
+    header {
+        flex-direction: column;
+    }
+
+    nav {
+        margin-top: 15px;
+    }
+
+    .hero h1 {
+        font-size: 2.3rem;
     }
 }
-
-/* ================= ALIENS ANIMADOS ================= */
-.alien-container {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    pointer-events: none;
-}
-
-.alien {
-    position: absolute;
-    width: 60px;
-    height: 30px;
-    border: 2px solid #00ffff;
-    border-radius: 50%;
-    box-shadow: 0 0 20px #00ffff;
-}
-
-@keyframes alienDiagonal {
-    from { transform: translate(-20%, 120%); }
-    to { transform: translate(120%, -20%); }
-}
-
-@keyframes alienHorizontal {
-    from { transform: translate(-20%, 30%); }
-    to { transform: translate(120%, 30%); }
-}
-
-@keyframes alienZigzag {
-    0% { transform: translate(-20%, 70%); }
-    50% { transform: translate(50%, 60%); }
-    100% { transform: translate(120%, 80%); }
-}
-
-.alien.diagonal { animation: alienDiagonal 18s linear infinite; }
-.alien.horizontal { animation: alienHorizontal 25s linear infinite; }
-.alien.zigzag { animation: alienZigzag 22s linear infinite; }
 </style>
 </head>
 
 <body>
 
-<header class="header">
-
-    <!-- Aliens animados -->
-    <div class="alien-container">
-        <div class="alien diagonal"></div>
-        <div class="alien horizontal"></div>
-        <div class="alien zigzag"></div>
-    </div>
-
-    <div class="header-content">
-        <h1>Aprendizaje Profesional con Inteligencia Artificial</h1>
-        <p>La educación del futuro impulsada por tecnología avanzada y sistemas inteligentes</p>
-        <a href="#contacto" class="btn-neon">Contactar</a>
-    </div>
-
+<header>
+    <div class="logo">🧠 Aprende IA</div>
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Qué es la IA</a>
+        <a href="#">Aprendizaje</a>
+        <a href="#">Futuro</a>
+        <a href="#">Contacto</a>
+    </nav>
 </header>
 
-<section class="about">
-    <h2>¿De qué trata?</h2>
+<section class="hero">
+    <div>
+        <h1>El Futuro de la Inteligencia Artificial Comienza Hoy</h1>
+        <p>Humanos, máquinas y tecnología alienígena aprendiendo juntos.</p>
+        <div class="hero-buttons">
+            <a href="#">Contactarme</a>
+            <a href="#">Más Información Académica</a>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>¿Qué Hacemos?</h2>
     <p>
-        Esta plataforma está diseñada para formar profesionales en Inteligencia Artificial,
-        automatización y tecnologías del futuro. Aprendé a dominar sistemas inteligentes,
-        innovación tecnológica y soluciones avanzadas que están transformando el mundo.
+        Enseñamos Inteligencia Artificial aplicada al mundo real, combinando tecnología humana
+        con conceptos avanzados inspirados en sistemas inteligentes extraterrestres.
+        Nuestro enfoque está orientado al aprendizaje del futuro: automatización,
+        análisis de datos, machine learning y evolución digital.
     </p>
 </section>
 
-<section class="features">
-    <h2>Tecnología del Futuro</h2>
+<section>
+    <h2>Aprendizaje IA</h2>
     <div class="cards">
-        <div class="card"><span>🤖</span><h3>IA Avanzada</h3><p>Sistemas inteligentes capaces de aprender y evolucionar.</p></div>
-        <div class="card"><span>🧠</span><h3>Aprendizaje Automático</h3><p>Modelos que mejoran su rendimiento con datos.</p></div>
-        <div class="card"><span>🚀</span><h3>Naves Espaciales</h3><p>Inspiración en tecnología aeroespacial del futuro.</p></div>
-        <div class="card"><span>🦾</span><h3>Robots</h3><p>Automatización avanzada y robótica inteligente.</p></div>
-        <div class="card"><span>⚙️</span><h3>Sistemas Inteligentes</h3><p>Infraestructuras tecnológicas autónomas.</p></div>
-    </div>
-</section>
-
-<section class="visual">
-    <h2>Explorando el Espacio Tecnológico</h2>
-    <p>Un entorno visual inspirado en el espacio, máquinas futuristas y la evolución de la inteligencia artificial.</p>
-    <div class="space-animation"></div>
-</section>
-
-<section class="contact" id="contacto">
-    <h2>Contacto</h2>
-    <p>📧 Email: <strong>Donatoconturla100@gmail.com</strong></p>
-    <p>📞 Teléfono: <strong>2235319300</strong></p>
-</section>
-
-<footer>
-    <p>© 2025 • Tecnología del Futuro • Todos los derechos reservados</p>
-</footer>
-
-</body>
-</html>
+        <div class="card">
+            <span>🤖</span>
+            <h3>Machine Learning</h3>
+            <p>Algoritmos que aprenden y evolucion
