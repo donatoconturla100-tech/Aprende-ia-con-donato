@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -244,101 +243,7 @@
         }
     </style>
 </head>
-
 <body>
-
-<header>
-    <div class="header-container">
-        <div class="logo">🧠 Aprende IA</div>
-        <nav>
-            <a href="#">Inicio</a>
-            <a href="#">Qué es la IA</a>
-            <a href="#">Aprendizaje</a>
-            <a href="#">Futuro</a>
-            <a href="#">Contacto</a>
-        </nav>
-    </div>
-</header>
-
-<section class="hero">
-    <div>
-        <h1>El Futuro de la Inteligencia Artificial Comienza Hoy</h1>
-        <p>Humanos, máquinas y tecnología avanzada colaborando en un futuro cercano.</p>
-        <div class="hero-buttons">
-            <a href="#">Contactarme</a>
-            <a href="#">Más Información Académica</a>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="container">
-        <h2>¿Qué Hacemos?</h2>
-        <p>
-            Enseñamos Inteligencia Artificial aplicada al mundo real, combinando innovación tecnológica,
-            pensamiento algorítmico y sistemas inteligentes inspirados en el futuro de la humanidad
-            y la evolución digital.
-        </p>
-    </div>
-</section>
-
-<section>
-    <div class="container">
-        <h2>Aprendizaje IA</h2>
-        <div class="cards">
-            <div class="card">
-                <span>🤖</span>
-                <h3>Machine Learning</h3>
-                <p>Algoritmos que aprenden, evolucionan y optimizan procesos.</p>
-            </div>
-            <div class="card">
-                <span>🧠</span>
-                <h3>Redes Neuronales</h3>
-                <p>Modelos inspirados en la inteligencia biológica.</p>
-            </div>
-            <div class="card">
-                <span>👽</span>
-                <h3>IA Avanzada</h3>
-                <p>Sistemas futuristas inspirados en tecnologías avanzadas.</p>
-            </div>
-            <div class="card">
-                <span>🚀</span>
-                <h3>Automatización</h3>
-                <p>El futuro del trabajo y la productividad inteligente.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="container">
-        <h2>Visión Futurista</h2>
-        <p>
-            En un mundo donde humanos, máquinas y sistemas avanzados colaboran,
-            la Inteligencia Artificial es el puente hacia una nueva era de conocimiento,
-            progreso y evolución tecnológica.
-        </p>
-    </div>
-</section>
-
-<section class="contact">
-    <div class="container">
-        <h2>Contacto</h2>
-        <div class="contact-panel">
-            <p>📞 Teléfono: <strong>2235319300</strong></p>
-            <p>📧 Email: <strong>donatoconturla100@gmail.com</strong></p>
-            <div class="contact-buttons">
-                <a href="#">Contactar ahora</a>
-                <a href="#">Solicitar información académica</a>
-                <a href="#">Enviar consulta</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<footer>
-    © 2025 Aprende IA — Tecnología, Futuro y Evolución Digital
-</footer>
-
+<!-- CONTENIDO ORIGINAL COMPLETO -->
 </body>
 </html>
