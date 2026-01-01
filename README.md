@@ -2,249 +2,232 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inteligencia Artificial del Futuro</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aprendizaje de IA | Futuro Tecnológico</title>
 
-    <style>
-        /* ================= RESET GENERAL ================= */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+<style>
+/* ================= RESET ================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Tahoma, sans-serif;
+}
 
-        body {
-            background: radial-gradient(circle at top, #0b0033, #030014 70%);
-            color: #ffffff;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+/* ================= BODY ================= */
+body{
+    background: radial-gradient(circle at top, #0b0220, #02000a 70%);
+    color:#eaeaff;
+    overflow-x:hidden;
+}
 
-        /* ================= HEADER ================= */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 100;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
-        }
+/* ================= HEADER ================= */
+header{
+    padding:60px 20px;
+    text-align:center;
+}
 
-        .header-container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+header h1{
+    font-size:3rem;
+    color:#7df9ff;
+    text-shadow:0 0 20px #00f0ff;
+    animation: glow 3s infinite alternate;
+}
 
-        .logo {
-            font-size: 1.6rem;
-            font-weight: bold;
-            color: #00fff7;
-            text-shadow: 0 0 15px #00fff7;
-        }
+header p{
+    max-width:800px;
+    margin:20px auto 0;
+    color:#cfcfff;
+}
 
-        nav a {
-            margin-left: 25px;
-            text-decoration: none;
-            color: #ffffff;
-            position: relative;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-        }
+/* ================= SECTIONS ================= */
+section{
+    padding:80px 10%;
+    position:relative;
+}
 
-        nav a::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -6px;
-            width: 0%;
-            height: 2px;
-            background: linear-gradient(90deg, #00fff7, #a100ff);
-            transition: width 0.3s ease;
-        }
+section h2{
+    font-size:2.2rem;
+    color:#b98cff;
+    margin-bottom:20px;
+}
 
-        nav a:hover {
-            color: #00fff7;
-        }
+section p, section li{
+    line-height:1.7;
+    color:#ddddff;
+}
 
-        nav a:hover::after {
-            width: 100%;
-        }
+ul{
+    margin-left:20px;
+}
 
-        /* ================= HERO ================= */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 140px 20px 60px;
-            text-align: center;
-        }
+/* ================= FUTURISTIC DIVIDER ================= */
+.divider{
+    height:2px;
+    background:linear-gradient(90deg, transparent, #7df9ff, transparent);
+    margin:60px 0;
+}
 
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            background: linear-gradient(90deg, #00fff7, #b700ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 25px rgba(183, 0, 255, 0.4);
-        }
+/* ================= ALIENS & ROBOTS ================= */
+.alien, .robot{
+    position:absolute;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    filter:drop-shadow(0 0 10px #00f0ff);
+}
 
-        .hero p {
-            max-width: 700px;
-            margin: auto;
-            font-size: 1.2rem;
-            color: #d0d0d0;
-        }
+.alien{
+    background:radial-gradient(circle, #00ffcc, #006666);
+    animation: floatAlien 12s linear infinite;
+}
 
-        .hero-buttons {
-            margin-top: 40px;
-        }
+.robot{
+    background:linear-gradient(135deg, #999, #444);
+    border-radius:10px;
+    animation: walkRobot 10s linear infinite;
+}
 
-        .hero-buttons a {
-            display: inline-block;
-            margin: 10px;
-            padding: 15px 35px;
-            border-radius: 30px;
-            text-decoration: none;
-            color: #ffffff;
-            border: 2px solid #00fff7;
-            box-shadow: 0 0 15px #00fff7;
-            transition: all 0.3s ease;
-        }
+.alien::after{
+    content:'';
+    position:absolute;
+    top:15px;
+    left:15px;
+    width:8px;
+    height:8px;
+    background:#000;
+    border-radius:50%;
+    box-shadow:20px 0 #000;
+}
 
-        .hero-buttons a:hover {
-            background: #00fff7;
-            color: #000000;
-            box-shadow: 0 0 35px #00fff7;
-        }
+.robot::after{
+    content:'';
+    position:absolute;
+    bottom:-10px;
+    left:10px;
+    width:40px;
+    height:10px;
+    background:#222;
+}
 
-        /* ================= SECCIONES ================= */
-        section {
-            padding: 90px 20px;
-        }
+/* ================= CONTACT ================= */
+.contact{
+    text-align:center;
+    padding:80px 20px;
+}
 
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            text-align: center;
-        }
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
 
-        section h2 {
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-            color: #a100ff;
-            text-shadow: 0 0 15px #a100ff;
-        }
+.btn{
+    padding:15px 30px;
+    border-radius:40px;
+    text-decoration:none;
+    color:#fff;
+    font-weight:bold;
+    background:linear-gradient(135deg, #6a00ff, #00f0ff);
+    box-shadow:0 0 20px rgba(0,240,255,.6);
+    transition:all .4s ease;
+}
 
-        section p {
-            max-width: 850px;
-            margin: auto;
-            color: #d6d6d6;
-        }
+.btn:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 35px #7df9ff;
+}
 
-        /* ================= CARDS ================= */
-        .cards {
-            margin-top: 60px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 30px;
-        }
+/* ================= FOOTER ================= */
+footer{
+    text-align:center;
+    padding:30px;
+    color:#888;
+    font-size:.9rem;
+}
 
-        .card {
-            background: rgba(0, 0, 0, 0.65);
-            border: 1px solid rgba(0, 255, 255, 0.35);
-            border-radius: 20px;
-            padding: 35px 25px;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
-        }
+/* ================= ANIMATIONS ================= */
+@keyframes glow{
+    from{ text-shadow:0 0 10px #00f0ff; }
+    to{ text-shadow:0 0 30px #7df9ff; }
+}
 
-        .card:hover {
-            transform: translateY(-10px) scale(1.03);
-            box-shadow: 0 0 45px rgba(161, 0, 255, 0.6);
-        }
+@keyframes floatAlien{
+    0%{ left:-10%; top:20%; }
+    100%{ left:110%; top:40%; }
+}
 
-        .card span {
-            font-size: 2.6rem;
-            display: block;
-            margin-bottom: 15px;
-        }
-
-        .card h3 {
-            margin-bottom: 10px;
-            color: #00fff7;
-        }
-
-        /* ================= CONTACTO ================= */
-        .contact {
-            background: linear-gradient(180deg, transparent, rgba(161, 0, 255, 0.15));
-            border-top: 1px solid rgba(161, 0, 255, 0.4);
-        }
-
-        .contact-panel {
-            max-width: 650px;
-            margin: auto;
-            background: rgba(0, 0, 0, 0.75);
-            padding: 45px;
-            border-radius: 25px;
-            box-shadow: 0 0 45px rgba(0, 255, 255, 0.35);
-        }
-
-        .contact-panel p {
-            font-size: 1.1rem;
-            margin: 15px 0;
-        }
-
-        .contact-buttons {
-            margin-top: 30px;
-        }
-
-        .contact-buttons a {
-            display: inline-block;
-            margin: 8px;
-            padding: 14px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            color: #ffffff;
-            border: 2px solid #a100ff;
-            box-shadow: 0 0 15px #a100ff;
-            transition: all 0.3s ease;
-        }
-
-        .contact-buttons a:hover {
-            background: #a100ff;
-            box-shadow: 0 0 35px #a100ff;
-        }
-
-        /* ================= FOOTER ================= */
-        footer {
-            padding: 25px;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #9a9a9a;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* ================= RESPONSIVE ================= */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.3rem;
-            }
-
-            nav a {
-                margin-left: 15px;
-            }
-        }
-    </style>
+@keyframes walkRobot{
+    0%{ right:-10%; bottom:10%; }
+    100%{ right:110%; bottom:15%; }
+}
+</style>
 </head>
+
 <body>
-<!-- CONTENIDO ORIGINAL COMPLETO -->
+
+<header>
+    <h1>Aprendizaje del Futuro</h1>
+    <p>Exploramos la Inteligencia Artificial y la Programación como pilares de la tecnología avanzada del mañana.</p>
+</header>
+
+<div class="alien"></div>
+<div class="robot"></div>
+
+<section>
+    <h2>🧠 Aprendizaje de Inteligencia Artificial</h2>
+    <p>
+        El aprendizaje de Inteligencia Artificial es el proceso mediante el cual las máquinas adquieren la capacidad
+        de analizar datos, aprender patrones y tomar decisiones inteligentes sin intervención humana constante.
+    </p>
+    <ul>
+        <li>Aprendizaje supervisado</li>
+        <li>Aprendizaje no supervisado</li>
+        <li>Aprendizaje profundo (Deep Learning)</li>
+        <li>Redes neuronales artificiales</li>
+    </ul>
+    <p>
+        La IA se aplica en medicina, robótica, finanzas, automatización, análisis de datos y exploración espacial,
+        permitiendo un futuro más eficiente, inteligente y conectado.
+    </p>
+</section>
+
+<div class="divider"></div>
+
+<section>
+    <h2>💻 Aprendizaje de Programación</h2>
+    <p>
+        La programación es la base del mundo digital. Aprender a programar desarrolla la lógica, el pensamiento crítico
+        y la capacidad de crear soluciones tecnológicas reales.
+    </p>
+    <ul>
+        <li>Fundamentos de programación</li>
+        <li>Introducción a Python</li>
+        <li>Lógica y estructuras de control</li>
+        <li>Automatización y análisis de datos</li>
+    </ul>
+    <p>
+        Python es uno de los lenguajes más usados en Inteligencia Artificial por su simplicidad, potencia y versatilidad,
+        siendo clave en el desarrollo de sistemas inteligentes.
+    </p>
+</section>
+
+<div class="divider"></div>
+
+<section class="contact">
+    <h2>📡 Contacto Futurista</h2>
+    <div class="buttons">
+        <a class="btn" href="https://wa.me/2235319300" target="_blank">WhatsApp</a>
+        <a class="btn" href="https://www.instagram.com/donato%20acosta%2012/" target="_blank">Instagram</a>
+        <a class="btn" href="mailto:donatoconturla100@gmail.com">Gmail</a>
+    </div>
+</section>
+
+<footer>
+    © Futuro IA · Tecnología Avanzada · Diseño Futurista
+</footer>
+
 </body>
 </html>
