@@ -1,159 +1,225 @@
 <!DOCTYPE html>
-
 <html lang="es">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aprendizaje de IA | Futuro Tecnológico</title>
 
-    <meta charset="UTF-8">
+<!-- ======= ESTILO CSS ======= -->
+<style>
+  /* ===== RESET ===== */
+  * { margin:0; padding:0; box-sizing:border-box; font-family: 'Orbitron', sans-serif; }
+  html, body { height:100%; overflow-x:hidden; background:#0a0a0a; color:#fff; }
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  /* ===== TIPOGRAFÍA Y GRADIENTES ===== */
+  h1, h2, h3, p { margin-bottom:15px; }
+  h1 { font-size:3em; background: linear-gradient(90deg, #00f0ff, #ff00ff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  h2 { font-size:2em; color:#0ff; }
+  p { color:#aaa; line-height:1.6; }
 
-    <title>Aprendizaje con Inteligencia Artificial</title>
+  /* ===== CONTENEDORES ===== */
+  header, section, footer { padding:60px 20px; }
+  header { text-align:center; background:linear-gradient(135deg, #1a1a1a, #111); position:relative; overflow:hidden; }
+  section { max-width:1200px; margin:0 auto; }
 
-    <!-- Enlace al archivo de estilos -->
+  /* ===== BOTONES ===== */
+  .btn {
+    padding:12px 25px;
+    margin:10px 5px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:1em;
+    transition:0.4s;
+    background: linear-gradient(45deg, #00f0ff, #ff00ff);
+    color:#000;
+    box-shadow:0 0 10px #00f0ff, 0 0 20px #ff00ff;
+  }
+  .btn:hover { transform:scale(1.1); box-shadow:0 0 20px #0ff, 0 0 40px #f0f; }
 
-    <link rel="stylesheet" href="style.css">
+  /* ===== CHAT IA ===== */
+  .chat-container {
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:300px;
+    max-height:400px;
+    background:#111;
+    border-radius:15px;
+    box-shadow:0 0 20px #0ff;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+    z-index:1000;
+  }
+  .chat-header {
+    padding:10px;
+    background: linear-gradient(90deg,#00f0ff,#ff00ff);
+    color:#000;
+    font-weight:bold;
+    text-align:center;
+  }
+  .chat-messages {
+    flex:1;
+    padding:10px;
+    overflow-y:auto;
+    font-size:0.9em;
+  }
+  .chat-input {
+    display:flex;
+    border-top:1px solid #222;
+  }
+  .chat-input input {
+    flex:1;
+    padding:10px;
+    border:none;
+    background:#111;
+    color:#fff;
+    outline:none;
+  }
+  .chat-input button {
+    padding:10px;
+    border:none;
+    background:#0ff;
+    color:#000;
+    cursor:pointer;
+    transition:0.3s;
+  }
+  .chat-input button:hover { background:#ff0; }
+
+  /* ===== EFECTOS PARTICULAS ===== */
+  #particles-js { position:absolute; width:100%; height:100%; top:0; left:0; z-index:0; }
+
+  /* ===== SECCIONES ===== */
+  .section-title { text-align:center; margin-bottom:40px; }
+  .contact-info a { color:#0ff; text-decoration:none; margin-right:15px; transition:0.3s; }
+  .contact-info a:hover { color:#ff0; }
+</style>
+
+<!-- ===== FUENTES ===== -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 
 </head>
-
 <body>
 
-    <!-- ================= HEADER FUTURISTA ================= -->
-
-    <header class="header">
-
-        <div class="overlay"></div>
-
-        <div class="header-content">
-
-            <h1>Aprendizaje Profesional con Inteligencia Artificial</h1>
-
-            <p>La educación del futuro impulsada por tecnología avanzada y sistemas inteligentes</p>
-
-            <a href="#contacto" class="btn-neon">Contactar</a>
-
-        </div>
-
-    </header>
-
-    <!-- ================= SECCIÓN DE QUÉ TRATA ================= -->
-
-    <section class="about">
-
-        <h2>¿De qué trata?</h2>
-
-        <p>
-
-            Esta plataforma está diseñada para formar profesionales en Inteligencia Artificial,
-
-            automatización y tecnologías del futuro. Aprendé a dominar sistemas inteligentes,
-
-            innovación tecnológica y soluciones avanzadas que están transformando el mundo.
-
-        </p>
-
-    </section>
-
-    <!-- ================= SECCIÓN CARACTERÍSTICAS ================= -->
-
-    <section class="features">
-
-        <h2>Tecnología del Futuro</h2>
-
-        <div class="cards">
-
-            <div class="card">
-
-                <span>🤖</span>
-
-                <h3>IA Avanzada</h3>
-
-                <p>Sistemas inteligentes capaces de aprender y evolucionar.</p>
-
-            </div>
-
-            <div class="card">
-
-                <span>🧠</span>
-
-                <h3>Aprendizaje Automático</h3>
-
-                <p>Modelos que mejoran su rendimiento con datos.</p>
-
-            </div>
-
-            <div class="card">
-
-                <span>🚀</span>
-
-                <h3>Naves Espaciales</h3>
-
-                <p>Inspiración en tecnología aeroespacial del futuro.</p>
-
-            </div>
-
-            <div class="card">
-
-                <span>🦾</span>
-
-                <h3>Robots</h3>
-
-                <p>Automatización avanzada y robótica inteligente.</p>
-
-            </div>
-
-            <div class="card">
-
-                <span>⚙️</span>
-
-                <h3>Sistemas Inteligentes</h3>
-
-                <p>Infraestructuras tecnológicas autónomas.</p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ================= SECCIÓN VISUAL FUTURISTA ================= -->
-
-    <section class="visual">
-
-        <h2>Explorando el Espacio Tecnológico</h2>
-
-        <p>
-
-            Un entorno visual inspirado en el espacio, máquinas futuristas
-
-            y la evolución de la inteligencia artificial.
-
-        </p>
-
-        <div class="space-animation"></div>
-
-    </section>
-
-    <!-- ================= SECCIÓN CONTACTO ================= -->
-
-    <section class="contact" id="contacto">
-
-        <h2>Contacto</h2>
-
-        <p>📧 Email: <strong>Donatoconturla100@gmail.com</strong></p>
-
-        <p>📞 Teléfono: <strong>2235319300</strong></p>
-
-    </section>
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer>
-
-        <p>© 2025 • Tecnología del Futuro • Todos los derechos reservados</p>
-
-    </footer>
+<!-- ===== HEADER / INICIO ===== -->
+<header>
+  <canvas id="particles-js"></canvas>
+  <h1>Bienvenido a Futuro Tecnológico</h1>
+  <p>Aprende Inteligencia Artificial y Python en un entorno futurista y elegante.</p>
+</header>
+
+<!-- ===== APRENDIZAJE EN PYTHON ===== -->
+<section id="python">
+  <div class="section-title">
+    <h2>Aprendizaje en Python</h2>
+    <p>Explora nuestros cursos, tutoriales y proyectos prácticos para dominar Python y crear tus propios modelos de IA.</p>
+    <button class="btn">Ver Cursos</button>
+  </div>
+</section>
+
+<!-- ===== IA INTEGRADA ===== -->
+<div class="chat-container" id="chat">
+  <div class="chat-header">Asistente IA</div>
+  <div class="chat-messages" id="chat-messages"></div>
+  <div class="chat-input">
+    <input type="text" id="chat-input" placeholder="Escribe tu pregunta...">
+    <button onclick="sendMessage()">Enviar</button>
+  </div>
+</div>
+
+<!-- ===== CONTACTO ===== -->
+<section id="contacto">
+  <div class="section-title">
+    <h2>Contacto</h2>
+    <p>Puedes comunicarte con nosotros a través de los siguientes medios:</p>
+    <div class="contact-info">
+      <p>Teléfono: <a href="tel:+542235319300">2235319300</a></p>
+      <p>Email: <a href="mailto:donatoconturla100@gmail.com">donatoconturla100@gmail.com</a></p>
+      <p>Instagram: <a href="https://www.instagram.com/donatoacosta12/" target="_blank">@donatoacosta12</a></p>
+      <p>WhatsApp: <a href="https://wa.me/542235319300" target="_blank">2235319300</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SCRIPT JS ===== -->
+<script>
+  // ===== CHAT IA SIMPLE =====
+  const chatMessages = document.getElementById('chat-messages');
+  const chatInput = document.getElementById('chat-input');
+
+  function sendMessage() {
+    const msg = chatInput.value.trim();
+    if(msg === '') return;
+    appendMessage('Tú', msg);
+    chatInput.value = '';
+    setTimeout(() => {
+      appendMessage('IA', getResponse(msg));
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }, 500);
+  }
+
+  function appendMessage(user, message) {
+    const div = document.createElement('div');
+    div.innerHTML = `<strong>${user}:</strong> ${message}`;
+    div.style.marginBottom = '10px';
+    chatMessages.appendChild(div);
+  }
+
+  function getResponse(msg) {
+    msg = msg.toLowerCase();
+    if(msg.includes('python')) return 'Python es un lenguaje de programación versátil, ideal para IA y automatización.';
+    if(msg.includes('redes neuronales')) return 'Las redes neuronales son modelos inspirados en el cerebro humano para aprendizaje profundo.';
+    if(msg.includes('deep learning')) return 'Deep Learning permite entrenar modelos complejos usando grandes cantidades de datos.';
+    if(msg.includes('curso') || msg.includes('aprendizaje')) return 'Ofrecemos cursos prácticos en Python y desarrollo de IA para todos los niveles.';
+    if(msg.includes('contacto') || msg.includes('teléfono') || msg.includes('email')) return 'Puedes contactarnos al 2235319300, donatoconturla100@gmail.com o nuestro Instagram @donatoacosta12';
+    return '¡Gracias por tu consulta! Estoy aquí para ayudarte a aprender IA y Python.';
+  }
+
+  chatInput.addEventListener('keypress', function(e){
+    if(e.key === 'Enter') sendMessage();
+  });
+
+  // ===== PARTICLES JS =====
+  // Efecto partículas simple con canvas
+  const canvas = document.getElementById('particles-js');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const particles = [];
+  for(let i=0;i<100;i++){
+    particles.push({
+      x: Math.random()*canvas.width,
+      y: Math.random()*canvas.height,
+      radius: Math.random()*2+1,
+      dx: (Math.random()-0.5)*1.5,
+      dy: (Math.random()-0.5)*1.5
+    });
+  }
+
+  function animateParticles(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    for(let p of particles){
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.radius,0,Math.PI*2);
+      ctx.fillStyle = '#0ff';
+      ctx.fill();
+      p.x += p.dx;
+      p.y += p.dy;
+      if(p.x<0||p.x>canvas.width) p.dx*=-1;
+      if(p.y<0||p.y>canvas.height) p.dy*=-1;
+    }
+    requestAnimationFrame(animateParticles);
+  }
+  animateParticles();
+
+  window.addEventListener('resize', ()=>{
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+</script>
 
 </body>
-
 </html>
