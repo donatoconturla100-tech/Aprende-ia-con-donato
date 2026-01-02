@@ -4,355 +4,298 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página Educativa + Juego IA</title>
+  <title>Aprendizaje de Inteligencia Artificial</title>
   <style>
-    /* ===================== */
-    /* ESTILOS GENERALES */
-    /* ===================== */
+    /* RESET CSS */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    
     body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+      background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
       color: #f0f0f0;
+      line-height: 1.6;
     }
 
-    h1, h2, h3 {
-      font-weight: 700;
-    }
-
-    a {
-      text-decoration: none;
-      color: #00ffe7;
-    }
-
-    /* ===================== */
-    /* HEADER / NAVEGACIÓN */
-    /* ===================== */
     header {
-      background: rgba(0, 0, 0, 0.8);
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      background: #111;
+      padding: 1rem;
+      text-align: center;
       position: sticky;
       top: 0;
       z-index: 100;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
     }
 
     header h1 {
-      font-size: 1.5rem;
       color: #00ffe7;
+      font-size: 2rem;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #00ffe7; }
+      to { text-shadow: 0 0 20px #00ffe7, 0 0 30px #00ffe7; }
+    }
+
+    nav {
+      margin-top: 0.5rem;
     }
 
     nav a {
-      margin-left: 20px;
-      font-weight: 600;
+      color: #00ffe7;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
       transition: 0.3s;
     }
 
     nav a:hover {
-      color: #ff00ff;
+      color: #fff;
     }
 
-    /* ===================== */
-    /* SECCIONES EDUCATIVAS */
-    /* ===================== */
-    section {
-      padding: 50px 20px;
+    main {
       max-width: 1200px;
-      margin: 0 auto;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      color: #00ffe7;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #00ffe7;
+      display: inline-block;
+      padding-bottom: 0.3rem;
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 12px;
-      padding: 20px;
-      transition: transform 0.3s, box-shadow 0.3s;
-      position: relative;
-      overflow: hidden;
+      background: rgba(255,255,255,0.05);
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      transition: transform 0.3s, background 0.3s;
     }
 
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 0 20px rgba(0,255,231,0.3);
+      background: rgba(255,255,255,0.1);
     }
 
-    .card h3 {
-      margin-top: 0;
-      color: #00ffe7;
+    .card img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 0.5rem;
     }
 
-    .card p {
-      line-height: 1.5;
-      font-size: 0.95rem;
-    }
-
-    /* Decoraciones futuristas con CSS */
-    .card::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(0,255,231,0.05) 1%, transparent 1%) center/20px 20px;
-      pointer-events: none;
-    }
-
-    /* ===================== */
-    /* JUEGO INTERACTIVO */
-    /* ===================== */
-    #game-section {
-      background: linear-gradient(to bottom right, #0f0c29, #1f1b3a);
-      padding: 50px 20px;
-    }
-
-    #game {
-      max-width: 700px;
-      margin: 0 auto;
+    .game {
       background: rgba(255,255,255,0.05);
-      border-radius: 12px;
-      padding: 30px;
+      padding: 2rem;
+      border-radius: 15px;
       text-align: center;
-      box-shadow: 0 0 20px rgba(0,255,231,0.2);
+      position: relative;
     }
 
-    #question {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
+    .game h3 {
+      color: #fffa00;
+      margin-bottom: 1rem;
     }
 
-    .options {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .option-btn {
-      background: rgba(0,255,231,0.1);
-      border: 1px solid #00ffe7;
-      border-radius: 8px;
-      padding: 12px;
-      font-size: 1rem;
+    .options button {
+      display: block;
+      width: 100%;
+      padding: 0.7rem;
+      margin: 0.5rem 0;
+      border: none;
+      border-radius: 10px;
+      background: #00ffe7;
+      color: #000;
+      font-weight: bold;
       cursor: pointer;
       transition: 0.3s;
     }
 
-    .option-btn:hover {
-      background: rgba(0,255,231,0.2);
-      transform: translateX(5px);
+    .options button:hover {
+      background: #00b8a9;
     }
 
     .feedback {
-      margin-top: 20px;
-      font-weight: 600;
-      min-height: 30px;
+      margin-top: 1rem;
+      font-weight: bold;
     }
 
-    #score {
-      margin-top: 15px;
-      font-size: 1rem;
-      color: #ffea00;
+    .score {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      color: #fffa00;
     }
 
-    #restart {
-      margin-top: 20px;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      background: #ff00ff;
-      color: #fff;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: 0.3s;
+    footer {
+      background: #111;
+      padding: 1rem;
+      text-align: center;
+      margin-top: 2rem;
+      color: #00ffe7;
     }
 
-    #restart:hover {
-      background: #ff4fff;
+    .contact a {
+      color: #00ffe7;
+      margin: 0 0.5rem;
+      text-decoration: none;
+      font-weight: bold;
     }
 
-    /* ===================== */
     /* RESPONSIVE */
-    /* ===================== */
-    @media(max-width: 768px){
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav {
-        margin-top: 10px;
-      }
+    @media(max-width:768px){
+      nav a { display: block; margin: 0.5rem 0; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ===================== -->
-  <!-- HEADER / NAVEGACIÓN -->
-  <!-- ===================== -->
   <header>
-    <h1>Explora IA</h1>
+    <h1>Aprendizaje de Inteligencia Artificial 🧠</h1>
     <nav>
-      <a href="#edu-section">Educación</a>
-      <a href="#game-section">Juego</a>
+      <a href="#educacion">Educación</a>
+      <a href="#juego">Juego Interactivo</a>
+      <a href="#contacto">Contacto</a>
     </nav>
   </header>
 
-  <!-- ===================== -->
-  <!-- SECCIÓN EDUCATIVA -->
-  <!-- ===================== -->
-  <section id="edu-section">
-    <h2>Aprende sobre Inteligencia Artificial</h2>
-    <div class="cards">
-
+  <main>
+    <!-- SECCIÓN EDUCATIVA -->
+    <section id="educacion">
+      <h2>Qué es la Inteligencia Artificial</h2>
       <div class="card">
-        <h3>¿Qué es la Inteligencia Artificial?</h3>
-        <p>La Inteligencia Artificial (IA) es una rama de la informática que busca crear sistemas capaces de realizar tareas que normalmente requieren inteligencia humana, como reconocimiento de voz, aprendizaje y toma de decisiones.</p>
+        <p>La Inteligencia Artificial (IA) es una rama de la informática que busca crear sistemas capaces de realizar tareas que normalmente requieren inteligencia humana, como el aprendizaje, razonamiento y resolución de problemas.</p>
       </div>
 
+      <h2>Python y Big Data en IA</h2>
       <div class="card">
-        <h3>Python y Big Data en IA</h3>
-        <p>Python es uno de los lenguajes más usados en IA por su simplicidad y poderosas librerías. Big Data permite analizar grandes volúmenes de información, esencial para entrenar modelos de IA.</p>
+        <p>Python es el lenguaje más usado para IA por su simplicidad y sus bibliotecas como TensorFlow y PyTorch. Big Data permite procesar grandes volúmenes de datos que son esenciales para entrenar modelos de IA.</p>
       </div>
 
+      <h2>Aplicaciones actuales y futuras de IA</h2>
       <div class="card">
-        <h3>Aplicaciones actuales y futuras</h3>
-        <p>La IA se aplica en medicina, finanzas, transporte, educación y entretenimiento. Futuras aplicaciones incluyen asistencia personalizada, ciudades inteligentes y predicción de problemas globales.</p>
+        <p>IA se usa en medicina, transporte, comercio, finanzas, biotecnología, y se proyecta que en el futuro estará presente en casi todos los sectores de la sociedad, optimizando procesos y creando nuevos servicios inteligentes.</p>
       </div>
 
+      <h2>Impacto ambiental y social</h2>
       <div class="card">
-        <h3>Impacto ambiental y social</h3>
-        <p>La IA consume energía y recursos, lo que genera impacto ambiental. Socialmente, mejora la eficiencia y crea nuevas oportunidades laborales, pero también plantea desafíos éticos y de privacidad.</p>
+        <p>El entrenamiento de modelos de IA consume energía y recursos. Además, la IA puede afectar empleos y privacidad, pero también ofrece soluciones para sostenibilidad, educación y salud.</p>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <!-- SECCIÓN JUEGO -->
+    <section id="juego">
+      <h2>Juego Interactivo de IA</h2>
+      <div class="game">
+        <h3>Pregunta:</h3>
+        <div class="question">Cargando pregunta...</div>
+        <div class="options"></div>
+        <div class="feedback"></div>
+        <div class="score">Puntaje: 0</div>
+        <button id="restart" style="margin-top:1rem; padding:0.5rem 1rem; border:none; border-radius:5px; cursor:pointer;">Reiniciar Juego</button>
+      </div>
+    </section>
 
-  <!-- ===================== -->
-  <!-- SECCIÓN DEL JUEGO -->
-  <!-- ===================== -->
-  <section id="game-section">
-    <h2>Juego Interactivo de Preguntas sobre IA</h2>
-    <div id="game">
-      <div id="question">Pregunta cargando...</div>
-      <div class="options" id="options"></div>
-      <div class="feedback" id="feedback"></div>
-      <div id="score">Puntaje: 0</div>
-      <button id="restart">Reiniciar Juego</button>
-    </div>
-  </section>
+    <!-- SECCIÓN CONTACTO -->
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <div class="card contact">
+        <p>Teléfono: <a href="tel:+542235319300">2235319300</a></p>
+        <p>Email: <a href="mailto:Donatoconturla100@gmail.com">Donatoconturla100@gmail.com</a></p>
+        <p>Instagram: <a href="https://www.instagram.com/donatoacosta12/" target="_blank">@donatoacosta12</a></p>
+        <p>WhatsApp: <a href="https://wa.me/542235319300" target="_blank">Enviar mensaje</a></p>
+      </div>
+    </section>
+  </main>
 
-  <!-- ===================== -->
-  <!-- JAVASCRIPT -->
-  <!-- ===================== -->
+  <footer>
+    &copy; 2026 Aprendizaje de IA
+  </footer>
+
   <script>
-    // =====================
-    // DATOS DEL JUEGO
-    // =====================
-    const questions = [
+    // JUEGO DE PREGUNTAS
+    const preguntas = [
       {
-        question: "¿En qué año se considera que comenzó la IA como campo académico?",
-        options: ["1956", "1945", "1969", "1972"],
-        answer: 0,
-        explanation: "La conferencia de Dartmouth en 1956 marcó el inicio formal de la IA."
+        pregunta: "¿Qué es la Inteligencia Artificial?",
+        opciones: ["Un robot físico", "Programas que aprenden y razonan", "Una aplicación de dibujo", "Un lenguaje de programación"],
+        correcta: 1,
+        explicacion: "La IA consiste en programas capaces de aprender, razonar y tomar decisiones."
       },
       {
-        question: "¿Cuál de estas librerías de Python se usa para Machine Learning?",
-        options: ["NumPy", "Pandas", "Scikit-learn", "Matplotlib"],
-        answer: 2,
-        explanation: "Scikit-learn es la librería más usada para algoritmos de Machine Learning."
+        pregunta: "¿Qué lenguaje se usa más en IA?",
+        opciones: ["Python", "HTML", "CSS", "Coca-Cola"],
+        correcta: 0,
+        explicacion: "Python es ampliamente usado por sus bibliotecas y facilidad de uso."
       },
       {
-        question: "¿Qué es Big Data?",
-        options: ["Un tipo de IA", "Grandes volúmenes de datos", "Un lenguaje de programación", "Un robot"],
-        answer: 1,
-        explanation: "Big Data se refiere al procesamiento y análisis de grandes volúmenes de datos."
+        pregunta: "¿Qué es Big Data?",
+        opciones: ["Conjunto de datos pequeños", "Una base de datos antigua", "Procesamiento de grandes volúmenes de datos", "Un juego de cartas"],
+        correcta: 2,
+        explicacion: "Big Data permite analizar grandes cantidades de información para tomar decisiones."
       },
       {
-        question: "¿Qué impacto ambiental puede generar la IA?",
-        options: ["Ninguno", "Consumo energético alto", "Solo reciclaje", "Contaminación acústica"],
-        answer: 1,
-        explanation: "El entrenamiento de modelos de IA consume energía, contribuyendo al impacto ambiental."
-      },
-      {
-        question: "Python es popular en IA por:",
-        options: ["Ser rápido como C++", "Simplicidad y librerías", "Tener GUI avanzada", "Ser usado en videojuegos"],
-        answer: 1,
-        explanation: "Python combina facilidad de uso con librerías potentes, ideal para IA."
+        pregunta: "Impacto ambiental de la IA:",
+        opciones: ["Ninguno", "Consume energía y recursos", "Reduce la energía automáticamente", "No existe"],
+        correcta: 1,
+        explicacion: "Entrenar modelos de IA consume energía y recursos."
       }
     ];
 
-    // =====================
-    // VARIABLES
-    // =====================
-    let currentQuestion = 0;
-    let score = 0;
+    let indice = 0;
+    let puntaje = 0;
 
-    const questionEl = document.getElementById("question");
-    const optionsEl = document.getElementById("options");
-    const feedbackEl = document.getElementById("feedback");
-    const scoreEl = document.getElementById("score");
-    const restartBtn = document.getElementById("restart");
+    const questionEl = document.querySelector('.question');
+    const optionsEl = document.querySelector('.options');
+    const feedbackEl = document.querySelector('.feedback');
+    const scoreEl = document.querySelector('.score');
 
-    // =====================
-    // FUNCIONES DEL JUEGO
-    // =====================
-    function loadQuestion() {
-      feedbackEl.textContent = "";
-      if(currentQuestion >= questions.length){
+    function cargarPregunta() {
+      if(indice >= preguntas.length){
         questionEl.textContent = "¡Juego terminado!";
         optionsEl.innerHTML = "";
-        feedbackEl.textContent = `Tu puntaje final es ${score} / ${questions.length}`;
+        feedbackEl.textContent = `Puntaje final: ${puntaje}`;
         return;
       }
-      const q = questions[currentQuestion];
-      questionEl.textContent = q.question;
-
+      const q = preguntas[indice];
+      questionEl.textContent = q.pregunta;
       optionsEl.innerHTML = "";
-      q.options.forEach((opt, index) => {
-        const btn = document.createElement("button");
-        btn.className = "option-btn";
-        btn.textContent = opt;
-        btn.onclick = () => checkAnswer(index);
+      feedbackEl.textContent = "";
+
+      q.opciones.forEach((op, i)=>{
+        const btn = document.createElement('button');
+        btn.textContent = op;
+        btn.onclick = ()=>verificarRespuesta(i);
         optionsEl.appendChild(btn);
       });
     }
 
-    function checkAnswer(selected) {
-      const q = questions[currentQuestion];
-      if(selected === q.answer){
-        feedbackEl.textContent = "✅ Correcto: " + q.explanation;
-        score++;
+    function verificarRespuesta(opcion){
+      const q = preguntas[indice];
+      if(opcion === q.correcta){
+        feedbackEl.textContent = "✅ Correcto! " + q.explicacion;
+        puntaje++;
       } else {
-        feedbackEl.textContent = "❌ Incorrecto: " + q.explanation;
+        feedbackEl.textContent = "❌ Incorrecto! " + q.explicacion;
       }
-      scoreEl.textContent = `Puntaje: ${score}`;
-      currentQuestion++;
-      setTimeout(loadQuestion, 2000);
+      scoreEl.textContent = "Puntaje: " + puntaje;
+      indice++;
+      setTimeout(cargarPregunta, 2000);
     }
 
-    function restartGame() {
-      currentQuestion = 0;
-      score = 0;
-      scoreEl.textContent = `Puntaje: ${score}`;
-      loadQuestion();
-    }
+    document.getElementById('restart').addEventListener('click', ()=>{
+      indice = 0;
+      puntaje = 0;
+      scoreEl.textContent = "Puntaje: 0";
+      cargarPregunta();
+    });
 
-    // =====================
-    // EVENTOS
-    // =====================
-    restartBtn.addEventListener("click", restartGame);
-
-    // Cargar primera pregunta
-    loadQuestion();
+    // Inicia juego
+    cargarPregunta();
   </script>
+
 </body>
 </html>
