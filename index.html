@@ -4,338 +4,355 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Era Artificial – Aprende y Domina la IA</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <title>Página Educativa + Juego IA</title>
   <style>
-    /* ================== Reset y tipografía ================== */
-    * { margin:0; padding:0; box-sizing:border-box; }
+    /* ===================== */
+    /* ESTILOS GENERALES */
+    /* ===================== */
     body {
-      font-family: 'Orbitron', sans-serif;
-      background: #0d0d0d;
-      color: #fff;
-      overflow-x: hidden;
-    }
-    a { text-decoration: none; color: inherit; }
-    button { cursor: pointer; font-family: inherit; }
-
-    /* ================== Fondo futurista con partículas ================== */
-    #particles {
-      position: fixed;
-      top:0; left:0;
-      width:100%; height:100%;
-      z-index: -1;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+      color: #f0f0f0;
     }
 
-    /* ================== Header ================== */
+    h1, h2, h3 {
+      font-weight: 700;
+    }
+
+    a {
+      text-decoration: none;
+      color: #00ffe7;
+    }
+
+    /* ===================== */
+    /* HEADER / NAVEGACIÓN */
+    /* ===================== */
     header {
-      text-align: center;
-      padding: 50px 20px 30px;
-      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-    }
-    header h1 {
-      font-size: 2.5rem;
-      color: #0ff;
-      text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
-      margin-bottom: 10px;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
-    /* ================== Secciones ================== */
+    header h1 {
+      font-size: 1.5rem;
+      color: #00ffe7;
+    }
+
+    nav a {
+      margin-left: 20px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff00ff;
+    }
+
+    /* ===================== */
+    /* SECCIONES EDUCATIVAS */
+    /* ===================== */
     section {
       padding: 50px 20px;
-      max-width: 1000px;
+      max-width: 1200px;
       margin: 0 auto;
-      transition: all 0.3s ease;
     }
-    section h2 {
-      font-size: 2rem;
-      color: #8a2be2;
-      text-shadow: 0 0 5px #8a2be2, 0 0 15px #00f0ff;
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(0,255,231,0.3);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #00ffe7;
+    }
+
+    .card p {
+      line-height: 1.5;
+      font-size: 0.95rem;
+    }
+
+    /* Decoraciones futuristas con CSS */
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(0,255,231,0.05) 1%, transparent 1%) center/20px 20px;
+      pointer-events: none;
+    }
+
+    /* ===================== */
+    /* JUEGO INTERACTIVO */
+    /* ===================== */
+    #game-section {
+      background: linear-gradient(to bottom right, #0f0c29, #1f1b3a);
+      padding: 50px 20px;
+    }
+
+    #game {
+      max-width: 700px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,255,231,0.2);
+    }
+
+    #question {
+      font-size: 1.2rem;
       margin-bottom: 20px;
     }
-    section p {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #ccc;
-    }
-    .expandable {
-      max-height: 100px;
-      overflow: hidden;
-      transition: max-height 0.5s ease;
-    }
-    .expandable.show {
-      max-height: 1000px;
-    }
-    .btn-expand {
-      display: inline-block;
-      margin-top: 10px;
-      background: #0ff;
-      color: #000;
-      padding: 8px 15px;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: all 0.3s ease;
-    }
-    .btn-expand:hover {
-      background: #8a2be2;
-      color: #fff;
-      box-shadow: 0 0 15px #8a2be2, 0 0 25px #0ff;
-    }
 
-    /* ================== Chatbot ================== */
-    #chatbot {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #111;
-      border: 2px solid #0ff;
-      border-radius: 10px;
-      width: 300px;
-      max-width: 90%;
-      padding: 10px;
-      box-shadow: 0 0 20px #0ff;
-    }
-    #chatbot h3 {
-      text-align: center;
-      margin-bottom: 10px;
-      color: #0ff;
-      text-shadow: 0 0 5px #0ff;
-    }
-    #chatbot-messages {
-      height: 200px;
-      overflow-y: auto;
-      border: 1px solid #0ff;
-      padding: 5px;
-      margin-bottom: 10px;
-      background: #000;
-    }
-    #chatbot input {
-      width: calc(100% - 50px);
-      padding: 5px;
-      border-radius: 5px;
-      border: 1px solid #0ff;
-      background: #111;
-      color: #fff;
-    }
-    #chatbot button {
-      width: 40px;
-      background: #0ff;
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: all 0.3s ease;
-    }
-    #chatbot button:hover {
-      background: #8a2be2;
-      color: #fff;
-      box-shadow: 0 0 10px #8a2be2;
-    }
-
-    /* ================== Contactos ================== */
-    .contact-links {
-      margin-top: 20px;
+    .options {
       display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
+      flex-direction: column;
+      gap: 10px;
     }
-    .contact-links a {
-      background: #0ff;
-      color: #000;
-      padding: 10px 15px;
+
+    .option-btn {
+      background: rgba(0,255,231,0.1);
+      border: 1px solid #00ffe7;
       border-radius: 8px;
-      font-weight: bold;
-      transition: all 0.3s ease;
+      padding: 12px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
     }
-    .contact-links a:hover {
-      background: #8a2be2;
+
+    .option-btn:hover {
+      background: rgba(0,255,231,0.2);
+      transform: translateX(5px);
+    }
+
+    .feedback {
+      margin-top: 20px;
+      font-weight: 600;
+      min-height: 30px;
+    }
+
+    #score {
+      margin-top: 15px;
+      font-size: 1rem;
+      color: #ffea00;
+    }
+
+    #restart {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background: #ff00ff;
       color: #fff;
-      box-shadow: 0 0 15px #8a2be2;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
     }
 
-    /* ================== Footer ================== */
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      background: #111;
-      color: #0ff;
-      text-shadow: 0 0 5px #0ff;
+    #restart:hover {
+      background: #ff4fff;
     }
 
-    /* ================== Responsive ================== */
-    @media (max-width:768px){
-      header h1 { font-size:2rem; }
-      section { padding: 30px 15px; }
-    }
+    /* ===================== */
+    /* RESPONSIVE */
+    /* ===================== */
+    @media(max-width: 768px){
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
 
+      nav {
+        margin-top: 10px;
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- Partículas de fondo -->
-  <canvas id="particles"></canvas>
 
-  <!-- Header -->
+  <!-- ===================== -->
+  <!-- HEADER / NAVEGACIÓN -->
+  <!-- ===================== -->
   <header>
-    <h1>Era Artificial – Aprende y Domina la IA</h1>
+    <h1>Explora IA</h1>
+    <nav>
+      <a href="#edu-section">Educación</a>
+      <a href="#game-section">Juego</a>
+    </nav>
   </header>
 
-  <!-- Secciones -->
-  <section id="sobre-nosotros">
-    <h2>Sobre nosotros</h2>
-    <p>En la Era Artificial nos dedicamos a enseñar a ser protagonistas de nuestra propia historia, llevando tus ideas al siguiente nivel. No todo es solo prompt en IA; aprender a usarla correctamente y adaptarla a nuestra vida diaria es nuestra misión.</p>
-  </section>
+  <!-- ===================== -->
+  <!-- SECCIÓN EDUCATIVA -->
+  <!-- ===================== -->
+  <section id="edu-section">
+    <h2>Aprende sobre Inteligencia Artificial</h2>
+    <div class="cards">
 
-  <section id="historia-ia">
-    <h2>Historia de la IA</h2>
-    <div class="expandable" id="historia-expand">
-      <p>La inteligencia artificial ha evolucionado desde simples programas de cálculo hasta complejas redes neuronales capaces de aprender y generar contenido creativo. Su impacto social y cultural es profundo, transformando industrias, educación y la forma en que interactuamos con la tecnología. Adaptarla a la vida real implica comprender sus posibilidades y limitaciones, y usarla éticamente para mejorar nuestras decisiones y procesos diarios.</p>
-    </div>
-    <button class="btn-expand" onclick="toggleExpandable('historia-expand')">Leer más</button>
-  </section>
+      <div class="card">
+        <h3>¿Qué es la Inteligencia Artificial?</h3>
+        <p>La Inteligencia Artificial (IA) es una rama de la informática que busca crear sistemas capaces de realizar tareas que normalmente requieren inteligencia humana, como reconocimiento de voz, aprendizaje y toma de decisiones.</p>
+      </div>
 
-  <section id="aprendizaje-practico">
-    <h2>Aprendizaje práctico</h2>
-    <div class="expandable" id="aprendizaje-expand">
-      <p>En esta sección aprenderás sobre prompts, ejemplos de uso de IA y consejos para aplicar la inteligencia artificial de manera ética y efectiva. La IA puede ayudarte a generar ideas, optimizar tareas y resolver problemas complejos. Usando prompts claros y éticos, podrás obtener resultados sorprendentes y útiles en tu vida académica y profesional.</p>
-    </div>
-    <button class="btn-expand" onclick="toggleExpandable('aprendizaje-expand')">Leer más</button>
-  </section>
+      <div class="card">
+        <h3>Python y Big Data en IA</h3>
+        <p>Python es uno de los lenguajes más usados en IA por su simplicidad y poderosas librerías. Big Data permite analizar grandes volúmenes de información, esencial para entrenar modelos de IA.</p>
+      </div>
 
-  <section id="contacto">
-    <h2>Contacto y redes sociales</h2>
-    <p>Teléfono: 2235319300</p>
-    <p>Correo: <a href="mailto:Donatoconturla100@gmail.com">Donatoconturla100@gmail.com</a></p>
-    <p>Instagram: <a href="https://www.instagram.com/donatoacosta12/" target="_blank">@donatoacosta12</a></p>
-    <div class="contact-links">
-      <a href="https://wa.me/5492235319300?text=Hola,%20quiero%20contactarte%20sobre%20la%20IA" target="_blank">WhatsApp</a>
-      <a href="https://www.instagram.com/donatoacosta12/" target="_blank">Instagram</a>
-      <a href="mailto:Donatoconturla100@gmail.com">Correo</a>
+      <div class="card">
+        <h3>Aplicaciones actuales y futuras</h3>
+        <p>La IA se aplica en medicina, finanzas, transporte, educación y entretenimiento. Futuras aplicaciones incluyen asistencia personalizada, ciudades inteligentes y predicción de problemas globales.</p>
+      </div>
+
+      <div class="card">
+        <h3>Impacto ambiental y social</h3>
+        <p>La IA consume energía y recursos, lo que genera impacto ambiental. Socialmente, mejora la eficiencia y crea nuevas oportunidades laborales, pero también plantea desafíos éticos y de privacidad.</p>
+      </div>
+
     </div>
   </section>
 
-  <!-- Chatbot -->
-  <div id="chatbot">
-    <h3>Chat IA</h3>
-    <div id="chatbot-messages"></div>
-    <input type="text" id="chatbot-input" placeholder="Escribe tu pregunta...">
-    <button onclick="sendMessage()">➤</button>
-  </div>
+  <!-- ===================== -->
+  <!-- SECCIÓN DEL JUEGO -->
+  <!-- ===================== -->
+  <section id="game-section">
+    <h2>Juego Interactivo de Preguntas sobre IA</h2>
+    <div id="game">
+      <div id="question">Pregunta cargando...</div>
+      <div class="options" id="options"></div>
+      <div class="feedback" id="feedback"></div>
+      <div id="score">Puntaje: 0</div>
+      <button id="restart">Reiniciar Juego</button>
+    </div>
+  </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>Teléfono: 2235319300 | Correo: Donatoconturla100@gmail.com</p>
-    <p>© 2026 Era Artificial. Todos los derechos reservados.</p>
-    <p>Aprende, crea y transforma tu mundo con IA.</p>
-  </footer>
-
-  <!-- ================== JavaScript ================== -->
+  <!-- ===================== -->
+  <!-- JAVASCRIPT -->
+  <!-- ===================== -->
   <script>
-    // Expandable sections
-    function toggleExpandable(id){
-      const el = document.getElementById(id);
-      el.classList.toggle('show');
-    }
-
-    // Chatbot básico
-    const chatbotMessages = document.getElementById('chatbot-messages');
-    const chatbotInput = document.getElementById('chatbot-input');
-
-    const faq = {
-      "qué es la ia": "La IA es la simulación de procesos inteligentes por parte de máquinas. Aquí aprenderás cómo usarla y aplicarla.",
-      "cómo usar la ia": "Puedes usar la IA mediante prompts claros y aplicando sus resultados de manera ética en la vida real.",
-      "qué son los prompts": "Los prompts son instrucciones o preguntas que le das a la IA para generar respuestas o soluciones.",
-      "para qué sirve esta página": "Esta página te enseña a aprender, usar y comprender la IA, su historia y aplicaciones prácticas."
-    };
-
-    function sendMessage(){
-      const text = chatbotInput.value.trim().toLowerCase();
-      if(!text) return;
-      appendMessage("Tú: " + chatbotInput.value);
-      let response = "Lo siento, no entendí tu pregunta. Intenta con algo más específico sobre IA.";
-      for(let key in faq){
-        if(text.includes(key)){
-          response = faq[key];
-          break;
-        }
+    // =====================
+    // DATOS DEL JUEGO
+    // =====================
+    const questions = [
+      {
+        question: "¿En qué año se considera que comenzó la IA como campo académico?",
+        options: ["1956", "1945", "1969", "1972"],
+        answer: 0,
+        explanation: "La conferencia de Dartmouth en 1956 marcó el inicio formal de la IA."
+      },
+      {
+        question: "¿Cuál de estas librerías de Python se usa para Machine Learning?",
+        options: ["NumPy", "Pandas", "Scikit-learn", "Matplotlib"],
+        answer: 2,
+        explanation: "Scikit-learn es la librería más usada para algoritmos de Machine Learning."
+      },
+      {
+        question: "¿Qué es Big Data?",
+        options: ["Un tipo de IA", "Grandes volúmenes de datos", "Un lenguaje de programación", "Un robot"],
+        answer: 1,
+        explanation: "Big Data se refiere al procesamiento y análisis de grandes volúmenes de datos."
+      },
+      {
+        question: "¿Qué impacto ambiental puede generar la IA?",
+        options: ["Ninguno", "Consumo energético alto", "Solo reciclaje", "Contaminación acústica"],
+        answer: 1,
+        explanation: "El entrenamiento de modelos de IA consume energía, contribuyendo al impacto ambiental."
+      },
+      {
+        question: "Python es popular en IA por:",
+        options: ["Ser rápido como C++", "Simplicidad y librerías", "Tener GUI avanzada", "Ser usado en videojuegos"],
+        answer: 1,
+        explanation: "Python combina facilidad de uso con librerías potentes, ideal para IA."
       }
-      setTimeout(()=>{ appendMessage("IA: " + response); }, 500);
-      chatbotInput.value = "";
-    }
+    ];
 
-    function appendMessage(msg){
-      const p = document.createElement('p');
-      p.textContent = msg;
-      chatbotMessages.appendChild(p);
-      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-    }
+    // =====================
+    // VARIABLES
+    // =====================
+    let currentQuestion = 0;
+    let score = 0;
 
-    // Partículas estilo red neuronal
-    const canvas = document.getElementById('particles');
-    const ctx = canvas.getContext('2d');
-    let particlesArray = [];
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const questionEl = document.getElementById("question");
+    const optionsEl = document.getElementById("options");
+    const feedbackEl = document.getElementById("feedback");
+    const scoreEl = document.getElementById("score");
+    const restartBtn = document.getElementById("restart");
 
-    window.addEventListener('resize', () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      initParticles();
-    });
-
-    class Particle {
-      constructor(){
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2 + 1;
-        this.speedX = Math.random() * 1 - 0.5;
-        this.speedY = Math.random() * 1 - 0.5;
+    // =====================
+    // FUNCIONES DEL JUEGO
+    // =====================
+    function loadQuestion() {
+      feedbackEl.textContent = "";
+      if(currentQuestion >= questions.length){
+        questionEl.textContent = "¡Juego terminado!";
+        optionsEl.innerHTML = "";
+        feedbackEl.textContent = `Tu puntaje final es ${score} / ${questions.length}`;
+        return;
       }
-      update(){
-        this.x += this.speedX;
-        this.y += this.speedY;
-        if(this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-        if(this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-      }
-      draw(){
-        ctx.fillStyle = '#0ff';
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI*2);
-        ctx.fill();
-      }
+      const q = questions[currentQuestion];
+      questionEl.textContent = q.question;
+
+      optionsEl.innerHTML = "";
+      q.options.forEach((opt, index) => {
+        const btn = document.createElement("button");
+        btn.className = "option-btn";
+        btn.textContent = opt;
+        btn.onclick = () => checkAnswer(index);
+        optionsEl.appendChild(btn);
+      });
     }
 
-    function initParticles(){
-      particlesArray = [];
-      for(let i=0;i<100;i++){
-        particlesArray.push(new Particle());
+    function checkAnswer(selected) {
+      const q = questions[currentQuestion];
+      if(selected === q.answer){
+        feedbackEl.textContent = "✅ Correcto: " + q.explanation;
+        score++;
+      } else {
+        feedbackEl.textContent = "❌ Incorrecto: " + q.explanation;
       }
+      scoreEl.textContent = `Puntaje: ${score}`;
+      currentQuestion++;
+      setTimeout(loadQuestion, 2000);
     }
 
-    function connectParticles(){
-      for(let a=0;a<particlesArray.length;a++){
-        for(let b=a;b<particlesArray.length;b++){
-          let dx = particlesArray[a].x - particlesArray[b].x;
-          let dy = particlesArray[a].y - particlesArray[b].y;
-          let distance = Math.sqrt(dx*dx + dy*dy);
-          if(distance < 100){
-            ctx.strokeStyle = 'rgba(0,255,255,' + (1 - distance/100) + ')';
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-            ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-            ctx.stroke();
-          }
-        }
-      }
+    function restartGame() {
+      currentQuestion = 0;
+      score = 0;
+      scoreEl.textContent = `Puntaje: ${score}`;
+      loadQuestion();
     }
 
-    function animateParticles(){
-      ctx.clearRect(0,0,canvas.width,canvas.height);
-      particlesArray.forEach(p => { p.update(); p.draw(); });
-      connectParticles();
-      requestAnimationFrame(animateParticles);
-    }
+    // =====================
+    // EVENTOS
+    // =====================
+    restartBtn.addEventListener("click", restartGame);
 
-    initParticles();
-    animateParticles();
+    // Cargar primera pregunta
+    loadQuestion();
   </script>
 </body>
 </html>
